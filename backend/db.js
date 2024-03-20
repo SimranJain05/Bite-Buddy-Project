@@ -11,14 +11,18 @@ const connectToDB = async() => {
 
         //    Read data from database
 
-        const fetched_data = mongoose.connection.db.collection("FoodItems");  // connecting a collection and store its data 
+        const fetched_data =  mongoose.connection.db.collection("FoodItems");  // connecting a collection and store its data 
 
         //  {} empty curly braces means whole data
         //  find method returns the data and we convert it to array 
-        const data  = await fetched_data.find({}).toArray(); 
         
-        // console.log(data);   //   Printing the data in console
-        
+        const data = await fetched_data.find({}).toArray()
+        global.FoodItems = data
+        // console.log(global.FoodItems);
+
+        const foodCollection  = mongoose.connection.db.collection("FoodCategory");
+        const catData = await foodCollection.find({}).toArray()
+        global.FoodCategory = catData;
     }
     catch(err){
         console.error(`Error connecting to the database: ${err}`)

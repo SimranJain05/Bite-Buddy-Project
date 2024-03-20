@@ -20,9 +20,15 @@ app.get('/', (req, res) => {
 
 app.use(express.json()) // middleware for parsing json request body
 
-const userRoutes = require("./Routes/CreateUser");  // import routes from other files
+const CreateUserRoute = require("./Routes/CreateUser");  // import routes from other files
 
-app.use("/api", userRoutes);  // apply the users route to our application with the /api prefix
+app.use("/api", CreateUserRoute);  // apply the  create users route to our application with the /api prefix
+
+
+app.use("/api" , require("./Routes/loginUser"));
+
+app.use("/api" , require("./Routes/DisplayData"));
+
 
 
 app.listen(port, ()=>{
