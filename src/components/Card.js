@@ -58,7 +58,7 @@ export default function Card(props) {
      
       <div>
         <div className="card mt-3" style={{ "width" : "16rem" , "maxHeight" : "420px"}}>
-          <img style={{height:"180px", objectFit:"fill"}}src={props.foodItem.img} className="card-img-top" alt="..." />
+          <img style={{height:"120px", objectFit:"fill"}}src={props.foodItem.img} className="card-img-top" alt="..." />
           <div className="card-body">
             <h5 className="card-title">{props.foodItem.name}</h5>
             {/* <p className="card-text" style={{ overflow: "hidden", whiteSpace: isTruncated ? "nowrap" : "pre-wrap", textOverflow: "clip" }} onClick={toggleTruncate}>
