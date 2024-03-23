@@ -11,7 +11,7 @@ const  bcrypt=require("bcryptjs");
 // body('password', 'Incorrect Password').isLength({min : 5}) now it pswd is invalid, it will show "incorrect password" in msg feild of error
 
 
-router.post("/createuser", [body('email').isEmail(), body('name').isLength({min : 5}) ,body('password', 'Incorrect Password').isLength({min : 5}) ],async (req,res)=>{
+router.post("/createuser", [body('email').isEmail() ,body('password', 'Incorrect Password').isLength({min : 5}) ],async (req,res)=>{
 
     const errors = validationResult(req) // validating request
     if (!errors.isEmpty()) {

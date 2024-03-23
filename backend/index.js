@@ -29,7 +29,7 @@ app.use("/api" , require("./Routes/loginUser"));
 
 app.use("/api" , require("./Routes/DisplayData"));
 
-
+app.use("/api" , require('./Routes/OrderData'));
 
 app.listen(port, ()=>{
     console.log(`listening on port ${port}`)
